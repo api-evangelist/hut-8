@@ -1,25 +1,74 @@
 aid: hut-8
+
 name: Hut 8
-description: 'Hut 8 is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by coatue) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Hut 8 is a Canadian cryptocurrency mining company that operates large-scale Bitcoin mining facilities. Founded in 2014, it focuses on sustainable mining practices, leveraging low-cost electricity and advanced hardware to secure the blockchain. The company provides transparency through regular reporting, offers mining services to institutional investors, and contributes to the growth of the digital asset ecosystem. Hut 8 is publicly listed on the Toronto Stock Exchange and engages with the broader crypto community through education and partnerships.'
+
 url: https://raw.githubusercontent.com/api-evangelist/hut-8/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-25'
+
 modified: '2026-10-25'
+
 tags:
 - Company
-apis: []
+- Cryptocurrency
+- Mining
+- Bitcoin
+- Canada
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- coatue
+
 common:
+- type: Hosts
+  url: hosts/hut-8-hosts.yml
+- type: Vendors
+  url: vendors/hut-8-vendors.yml
+- type: TermsOfService
+  url: https://www.hut8.com/terms
+- type: Support
+  url: https://support.hut8.com/esc
+- type: PrivacyPolicy
+  url: https://www.hut8.com/privacy-policy
+- type: DomainSecurity
+  url: security/hut-8-domain-security.yml
 - type: Website
   url: https://hut8.com/
+
+apis: []
+
+x-backed-by:
+- coatue
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-25'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://support.hut8.com/api/mcp
+    status: 401
+  - url: https://hut8.com/
+    status: 200
+x-enrichment:
+  date: '2026-10-25'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
